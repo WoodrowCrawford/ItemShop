@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HelloWorld
 {
-    struct item
+    struct Item
     {
         public string itemName;
         public int cost;
@@ -17,19 +17,19 @@ namespace HelloWorld
         //Calls on created variables
         private bool _gameover = false;
         private Player player = new Player();
-        private Shop _Shop;
-        private item _bomb;
-        private item _mask;
-        private item _harp;
+        private Shop shop = new Shop();
+        private Item _bomb;
+        private Item _mask;
+        private Item _harp;
 
 
-       
+
         //Run the game
         public void Run()
         {
             Start();
 
-            while(_gameover == false)
+            while (_gameover == false)
             {
                 Update();
             }
@@ -38,7 +38,7 @@ namespace HelloWorld
 
         }
 
-        //Names the items
+        //Names the items for the shop
         public void NameItems()
         {
             _bomb.itemName = "Bomb";
@@ -47,28 +47,37 @@ namespace HelloWorld
             _mask.cost = 10;
             _harp.itemName = "Harp";
             _harp.cost = 10;
-            
+
+
         }
 
        
 
 
+
         //Performed once when the game begins
         public void Start()
         {
+           
+
+
+
+            player.GetInventory();
             Console.WriteLine("Welcome!");
+            Console.WriteLine("Please pick an item to buy!");
+            
         }
 
         //Repeated until the game ends
         public void Update()
         {
-            
+             
         }
 
         //Performed once when the game ends
         public void End()
         {
-            
+            Console.WriteLine("Thank you! Please come again!");
         }
     }
 }

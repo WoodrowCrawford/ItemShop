@@ -7,30 +7,33 @@ namespace HelloWorld
     class Shop
     {
         private int _gold;
-        private item[] _inventory;
-    }
+        private Item[] _inventory;
 
-    public Shop()
-    {
-        int gold = 0;
-        string[] inventory = {"Bomb", "Mask", "Harp"};
-        foreach(string i in inventory)
+
+        public Shop()
         {
-            Console.WriteLine(i);
-            
+            _gold = 0;
+            _inventory = new Item[3];
+
         }
-        
-        
+
+        public Shop(string Item)
+        {
+            string[] _inventory = new string[3] { "1. Bomb", "2. Mask", "3. Harp" };
+            foreach (string i in _inventory)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public bool sell(Player player, int inventory)
+        {
+            player.GetInventory();
+
+            return true;
+
+        }
 
     }
 
-    public Shop(item[])
-    {
-        string inventory[];
-    }
-
-    public bool sell(Player player, int)
-    {
-
-    }
 }
