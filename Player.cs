@@ -33,21 +33,18 @@ namespace HelloWorld
                 _inventory[inventorySpace] = item;
                 return true;
             }
-            Console.WriteLine("Yo you broke broke man!");
             return false;
         }
 
 
-        public void GetInventory()
+        public Item[] GetInventory()
         {
-            int[] inventorySize = new int[3] { 1, 2, 3 };
-            foreach (int i in inventorySize)
-            {
-               
-                Console.WriteLine(i);
-            }
+            return _inventory;
+        }
 
-
+        public int GetGold()
+        {
+            return _gold;
         }
     }
 }
