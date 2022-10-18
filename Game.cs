@@ -58,10 +58,11 @@ namespace HelloWorld
             for(int i = 0; i < inventory.Length; i++)
             {
                 Console.WriteLine((i + 1) + ". " + inventory[i].itemName + inventory[i].cost);
+                _shopInventory = inventory;
             }
         }
        
-        private void OpenShopMenu()
+        public void OpenShopMenu()
         {
             Console.WriteLine("Welcome! PLease select an item.");
             PrintInventory(_shopInventory);
@@ -110,6 +111,9 @@ namespace HelloWorld
                         break;
                     }
                 case '2':
+                    {
+                        break;
+                    }
             }
         }
 
